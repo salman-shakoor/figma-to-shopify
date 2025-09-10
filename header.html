@@ -1,0 +1,336 @@
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+<link
+    href="https://fonts.googleapis.com/css2?family=Avenir&family=Poppins:wght@400;600&family=Supersonic+Rocketship&display=swap"
+    rel="stylesheet">
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .site-header {
+        padding: 15px 20px;
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        max-width: 1440px;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .logo img {
+        width: 93px;
+        height: 73px;
+        object-fit: cover;
+
+    }
+
+    .nav ul {
+        list-style: none;
+        display: flex;
+        gap: 25px;
+    }
+
+    .nav ul li {
+        position: relative;
+        padding-bottom: 5px;
+    }
+
+    .nav ul li a {
+        color: #121212BF;
+        transition: color 0.3s;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-family: "Avenir";
+        font-weight: 400;
+        font-style: "Roman";
+        font-size: 16px;
+        line-height: 20.8px;
+        letter-spacing: 0px;
+        vertical-align: middle;
+
+    }
+
+    .nav ul li a:hover {
+        color: #00AFC0;
+    }
+
+    .nav ul li .arrow {
+        font-size: 0.7rem;
+    }
+
+    .nav ul li ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background: #fff;
+        list-style: none;
+        display: none;
+        padding: 10px 0;
+        min-width: 180px;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+
+    }
+
+    .nav ul li:hover>ul {
+        display: block;
+    }
+
+    .nav ul li ul li {
+        padding: 8px 15px;
+    }
+
+    .nav ul li ul li:hover {
+        background: #f9f9f9;
+    }
+
+    .nav ul li ul li ul {
+        left: 100%;
+        top: 0;
+
+    }
+
+    .icons {
+        display: flex;
+        gap: 15px;
+    }
+
+    .icon {
+        font-size: 1.2rem;
+    }
+
+    .hamburger {
+        display: none;
+        font-size: 1.8rem;
+        cursor: pointer;
+    }
+
+    .drawer {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 280px;
+        height: 100%;
+        background: #fff;
+        box-shadow: 2px 0 8px rgba(0, 0, 0, 0.2);
+        transition: right 0.3s ease;
+        padding: 20px;
+        z-index: 2000;
+        overflow-y: auto;
+    }
+
+    .drawer.active {
+        right: 0;
+    }
+
+    .drawer-header {
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .drawer .close {
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    .drawer ul {
+        list-style: none;
+        margin-top: 20px;
+    }
+
+    .drawer li {
+        border-bottom: 1px solid #eee;
+    }
+
+    .drawer li a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px;
+        font-weight: 600;
+        color: #333;
+    }
+
+    .drawer .submenu {
+        display: none;
+        padding-left: 15px;
+    }
+
+    .drawer .submenu li a {
+        font-weight: 500;
+        font-size: 0.95rem;
+    }
+
+    .drawer .submenu .submenu li a {
+        font-weight: 400;
+        font-size: 0.9rem;
+    }
+
+    .drawer-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+    }
+
+    .arrow img {
+        margin-top: 6px;
+    }
+
+    .nav ul li:hover>a .arrow img {
+        transform: rotate(-180deg);
+        transition: transform 0.3s;
+    }
+
+    .nav .active {
+        color: #00AFC0;
+    }
+
+    @media (max-width: 992px) {
+
+        .nav,
+        .icons {
+            display: none;
+        }
+
+        .hamburger {
+            display: block;
+        }
+    }
+</style>
+
+<header class="site-header">
+    <div class="container">
+
+        <a href="#" class="logo"><img src="Koala picks logo 1.svg" alt=""></a>
+        <nav class="nav">
+            <ul>
+                <li>
+                    <a href="#" class="active">Home <span class="arrow"><img src="Frame.svg" alt="arrow"></span></a>
+                    <ul>
+                        <li><a href="#">Overview</a></li>
+                        <li><a href="#">Updates</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Shop Now <span class="arrow"><img src="Frame.svg" alt="arrow"></span></a>
+                    <ul>
+                        <li>
+                            <a href="#">Snacks <span class="arrow"><img src="Frame.svg" alt="arrow"></span></a>
+                            <ul>
+                                <li><a href="#">Cookies</a></li>
+                                <li><a href="#">Chips</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">Drinks</a></li>
+                        <li><a href="#">Meals</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Why Koala Picks <span class="arrow"><img src="Frame.svg" alt="arrow"></span></a>
+                    <ul>
+                        <li><a href="#">Our Story</a></li>
+                        <li><a href="#">Benefits</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Contact <span class="arrow"><img src="Frame.svg" alt="arrow"></span></a>
+                    <ul>
+                        <li><a href="#">Email</a></li>
+                        <li><a href="#">Phone</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </nav>
+        <div class="icons">
+            <a href="#"><span class="icon"><img src="icon-search.svg" alt=""></span></a>
+            <a href="#"><span class="icon"><img src="Frame2.svg" alt=""></span></a>
+            <a href="#"><span class="icon"><img src="Vector(1).svg" alt=""></span></a>
+        </div>
+        <div class="hamburger" onclick="toggleDrawer()">☰</div>
+    </div>
+
+    <div class="drawer" id="drawer">
+        <div class="drawer-header">
+            <span class="close" onclick="toggleDrawer()">×</span>
+        </div>
+        <ul>
+            <li class="active">
+                <a href="#">Home <span class="arrow"><img src="Frame.svg" alt="arrow"></span></a>
+                <ul class="submenu">
+                    <li><a href="#">Overview</a></li>
+                    <li><a href="#">Updates</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Shop Now <span class="arrow"><img src="Frame.svg" alt="arrow"></span></a>
+                <ul class="submenu">
+                    <li>
+                        <a href="#">Snacks <span class="arrow"><img src="Frame.svg" alt="arrow"></span></a>
+                        <ul class="submenu">
+                            <li><a href="#">Cookies</a></li>
+                            <li><a href="#">Chips</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Drinks</a></li>
+                    <li><a href="#">Meals</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Why Koala Picks <span class="arrow"><img src="Frame.svg" alt="arrow"></span></a>
+                <ul class="submenu">
+                    <li><a href="#">Our Story</a></li>
+                    <li><a href="#">Benefits</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Contact <span class="arrow"><img src="Frame.svg" alt="arrow"></span></a>
+                <ul class="submenu">
+                    <li><a href="#">Email</a></li>
+                    <li><a href="#">Phone</a></li>
+                </ul>
+            </li>
+        </ul>
+
+        <div class="drawer-icons">
+            <a href="#"><span class="icon"><img src="icon-search.svg" alt=""></span></a>
+            <a href="#"><span class="icon"><img src="Frame2.svg" alt=""></span></a>
+            <a href="#"><span class="icon"><img src="Vector(1).svg" alt=""></span></a>
+        </div>
+    </div>
+</header>
+
+<script>
+    function toggleDrawer() {
+        document.getElementById("drawer").classList.toggle("active");
+    }
+    document.querySelectorAll(".drawer li > a").forEach(link => {
+        link.addEventListener("click", function (e) {
+            const submenu = this.nextElementSibling;
+            if (submenu && submenu.classList.contains("submenu")) {
+                e.preventDefault();
+                if (submenu.style.display === "block") {
+                    submenu.style.display = "none";
+                    this.querySelector(".arrow").textContent = "▶";
+                } else {
+                    submenu.style.display = "block";
+                    this.querySelector(".arrow").innerHTML = "<img src='Frame.svg' alt='arrow' style='transform: rotate(-180deg);'>";
+                }
+            }
+        });
+    });
+</script>
